@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>{@title_page}</title>
+	{@@meta_tag}
+	<link rel="stylesheet" type="text/css" href="{@html_path}/resources/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{@html_path}/resources/bootstrap/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="{@html_path}/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="well">
+			<fieldset>
+				<legend>Iniciar sesion</legend>
+					<form action="{@site_path}index/logueo" class="form-horizontal" method="POST">
+						<div class="control-group">
+							<label for="username" class="control-label">Usuario:</label>
+							<div class="controls">
+								<input type="text" name="username" id="username" >
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="pass" class="control-label">Contraseña:</label>
+							<div class="controls">
+								<input type="password" name="pass" id="pass">
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<button class="btn btn-primary" type="submit">Ingresar sesion</button>
+								<button class="btn btn-warning" type="reset">Limpiar</button>
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								{#messaje}
+							</div>
+						</div>
+					</form>	
+				
+			</fieldset>
+			
+		</div>
+	</div>
+	
+</body>
+</html>
