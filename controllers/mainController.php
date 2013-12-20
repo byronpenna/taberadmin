@@ -1,15 +1,20 @@
 <?php 
 class mainController extends Controller{
 	function index(){
-		$this->view->render("main");
+		$vars = new stdClass();
+		$vars->contentBodyPlace = "";
+		$this->view->render("main",$vars);
 	}
-	function addUsers($ajax=""){
-		if($ajax = ""){
-			echo "nice";	
+	function addUsers(){
+		$work = new Work($_POST); 
+		$frm = $work->frm;
+		if(@$frm->ajax){
+			$this->view->render("addUser");
 		}else{
-			$this->view->render("main");
+			$vars = new stdClass();
+			$vars->contentBodyPlace = $this->view->render("addUser",null,true);
+			$this->view->render("main",$vars);
 		}
-		
 	}
 }
 ?>

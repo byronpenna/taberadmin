@@ -6,9 +6,12 @@ class View
 	{
 		$this->controller = $request->controller;
 	}
-	function render($view,$obj=null){
+	function render($view,$obj=null,$getView=false){
 			// $viewSrc = VIEW.$this->controller.DS.$view.".html";
 			$viewSrc = ROOT."site_media".DS.$view.".html";
+			if(!file_exists($viewSrc)){
+				$viewSrc = ROOT."site_media".DS."html".DS.$view.".html";
+			}
 			$varsKeysSrc = VIEW.$this->controller.DS."keys".DS.DEFAULT_LANG.".json";
 			$varsKeysSrcParent = KEYS.DEFAULT_LANG.".json";
 
@@ -23,8 +26,11 @@ class View
 			$view = $template->setLayout($layout,$view);
 			// echo $varsKeysSrc;
 			$view = $template->setKeys($varsKeysView,$view);
-	
-			echo $view;
+			if($getView){
+				return $view;
+			}else{
+				echo $view;	
+			}
 		}
 		function getLayout($template,$varsKeysSrcParent,$varsKeysSrc){
 			$varsKeysParentView = $template->getJson($varsKeysSrcParent);

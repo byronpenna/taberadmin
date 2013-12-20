@@ -1,0 +1,41 @@
+<div class="fluid-row">
+	<div class="span4">
+		<fieldset>
+			<legend>Agregar</legend>
+			<form role="form" id="addUserForm" action="{@site_path}users/addUser" method="POST">
+				<div class="form-group">
+					<label for="name">{@nameFrm}</label>
+					<input type="text" name="name" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="last_name">{@last_nameFrm}</label>
+					<input type="text" name="last_name" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="birthday">{@birthdayFrm}</label>
+					<input type="text" name="birthday" class="form-control" id="birthdayFrm">
+				</div>
+				<div class="form-group">
+					<label for="username">{@usernameFrm}</label>
+					<input type="text" name="username" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label for="pass">{@passFrm}</label>
+					<input type="password" name="pass" class="form-control">
+				</div>
+				<button type="submit" class="btn btn-default">{@addBtnFrm}</button>
+				<button type="reset" class="btn btn-default">{@resetBtnFrm}</button>
+				<p class="help-block" id="addUserResult"></p>
+			</form>	
+		</fieldset>
+	</div>
+	<div class="span4">
+		<fieldset>
+			<legend>Privilegios</legend>
+		</fieldset>
+	</div>
+	<div class="span4">
+		
+	</div>
+</div>
+<script type="text/javascript" src="{@html_path}/js/addUser/script.js"></script>
