@@ -21,6 +21,7 @@ class View
 			
 			$view = $template->setDinamicsVars($obj,$view);
 			$view = $template->setLayout($layout,$view);
+			// echo $varsKeysSrc;
 			$view = $template->setKeys($varsKeysView,$view);
 	
 			echo $view;
